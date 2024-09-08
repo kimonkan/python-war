@@ -1,4 +1,4 @@
-# card.py
+# card
 # suit = str, rank = str, value = int
 import random
 
