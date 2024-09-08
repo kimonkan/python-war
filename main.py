@@ -28,6 +28,5 @@ class Deck:
 
                 self.cards.append(created_card)
 
-
-new_deck =  Deck()
-print(new_deck.cards[5])
+    def shuffle(self):
+        random.shuffle(self.cards)
