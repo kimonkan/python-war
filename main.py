@@ -14,7 +14,7 @@ class Card:
         self.value = values[self.rank]
 
     def __str__(self):
-        return f'{self.suit} of {self.rank}'
+        return f'{self.rank} of {self.suit}'
 
 
 class Deck:
@@ -27,3 +27,7 @@ class Deck:
                 created_card = Card(suit, rank)
 
                 self.cards.append(created_card)
+
+
+new_deck =  Deck()
+print(new_deck.cards[5])
