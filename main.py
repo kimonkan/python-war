@@ -16,3 +16,14 @@ class Card:
     def __str__(self):
         return f'{self.suit} of {self.rank}'
 
+
+class Deck:
+    def __init__(self):
+        self.cards = []
+
+        for suit in suits:
+            for rank in ranks:
+                #Create card object
+                created_card = Card(suit, rank)
+
+                self.cards.append(created_card)
