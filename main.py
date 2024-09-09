@@ -21,20 +21,20 @@ class Deck:
 
     def __init__(self):
 
-        self.cards = []
+        self.deck = []
 
         for suit in suits:
             for rank in ranks:
                 #Create card object
                 created_card = Card(suit, rank)
 
-                self.cards.append(created_card)
+                self.deck.append(created_card)
 
     def shuffle(self):
-        random.shuffle(self.cards)
+        random.shuffle(self.deck)
 
     def deal(self):
-        return self.cards.pop()
+        return self.deck.pop()
 
 
 class Player:
