@@ -1,4 +1,3 @@
-# card
 # suit = str, rank = str, value = int
 import random
 
@@ -59,3 +58,39 @@ class Player:
 
     def __str__(self):
         return f'Player {self.name} has {len(self.hand)} cards'
+
+
+# GAME SETUP
+player_one = Player("One")
+player_two = Player("Two")
+
+new_deck = Deck()
+new_deck.shuffle()
+
+for x in range(26):
+    player_one.add_card(new_deck.deal())
+    player_two.add_card(new_deck.deal())
+
+game_on = True
+round_num = 0
+
+while game_on:
+    round_num += 1
+    print(f'Round {round_num}')
+
+    if len(player_one.hand) == 0:
+        print(f'Player One has no cards! Player Two wins!')
+        game_on = False
+        break
+
+    if len(player_two.hand) == 0:
+        print(f'Player Two has no cards! Player One wins!')
+        game_on = False
+        break
+
+    # START NEW ROUND
+    player_one_cards = []
+    player_one_cards.append(player_two.remove_one())
+
+    player_two_cards = []
+    player_two_cards.append(player_two.remove_one())
