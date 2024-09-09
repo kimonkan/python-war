@@ -49,3 +49,12 @@ class Player:
 
         self.name = name
         self.hand = []
+
+    def remove_one(self):
+        pass
+
+    def add_card(self, new_cards):
+        pass
+
+    def __str__(self):
+        return f'Player {self.name} has {len(self.hand)} cards'
