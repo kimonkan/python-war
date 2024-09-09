@@ -15,7 +15,6 @@ class Card:
         self.value = values[self.rank]
 
     def __str__(self):
-
         return f'{self.rank} of {self.suit}'
 
 
@@ -26,20 +25,16 @@ class Deck:
         self.cards = []
 
         for suit in suits:
-
             for rank in ranks:
-
                 #Create card object
                 created_card = Card(suit, rank)
 
                 self.cards.append(created_card)
 
     def shuffle(self):
-
         random.shuffle(self.cards)
 
     def deal(self):
-
         return self.cards.pop()
 
 
@@ -54,7 +49,13 @@ class Player:
         return self.hand.pop(0)
 
     def add_card(self, new_cards):
-        pass
+        if type(new_cards) == type([]):
+            #list of multiple Card objects
+            self.hand.extend(new_cards)
+
+        else:
+            #for a single Card object
+            self.hand.append(new_cards)
 
     def __str__(self):
         return f'Player {self.name} has {len(self.hand)} cards'
