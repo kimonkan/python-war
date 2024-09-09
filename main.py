@@ -51,7 +51,7 @@ class Player:
         self.hand = []
 
     def remove_one(self):
-        pass
+        return self.hand.pop(0)
 
     def add_card(self, new_cards):
         pass
